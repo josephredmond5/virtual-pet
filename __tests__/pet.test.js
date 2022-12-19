@@ -26,7 +26,7 @@ describe('constructor', () => {
  });
 
  describe('growUp', () => {
-  it('increases the age by', () => {
+  it('increases the age by 1', () => {
     const pet = new Pet('Fido');
     pet.growUp();
     expect(pet.age).toEqual(1);
@@ -43,5 +43,4 @@ describe('constructor', () => {
     pet.growUp();
     expect(pet.fitness).toEqual(7);
   })
-
- })
+})
