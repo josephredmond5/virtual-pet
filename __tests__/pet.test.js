@@ -104,4 +104,26 @@ describe('Feed', () => {
     expect(pet.fitness).toBeLessThanOrEqual(3);
     expect(pet.message).toEqual('I am hungry AND I need a walk');
   })
-})
+
+  describe('isAlive', () => {
+    it('tells you if the fitness is 0 and pet is dead', () => {
+      const pet = new Pet('Fido');
+      pet.fitness = 0;
+
+      expect(pet.isAlive).toBe(false);
+    })
+  })
+    
+    it('tells you if your pet hunger is 10 or less and is alive', () => {
+      const pet = new Pet('Fido');
+      pet.hunger = 10;
+      expect(pet.isAlive).toBe(false);
+    })
+
+    it('tells you if your pet is 30 or over and is alive', () => {
+      const pet = new Pet('Fido');
+      pet.age = 30;
+
+      expect(pet.isAlive).toBe(false)
+    })
+});

@@ -45,6 +45,13 @@ Pet.prototype.checkUp = function() {
       this.hunger -= 3;
     } else this.hunger = 0;
   }
+
+  Pet.prototype = {
+    get isAlive() {
+      return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+    }
+  }
+
 }
 
 
