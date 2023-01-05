@@ -33,6 +33,9 @@ Pet.prototype.checkUp = function() {
 }
 
   Pet.prototype.walk = function() {
+    if (!this.isAlive) {
+      throw new Error('Your pet is no longer alive :(');
+    }
     if ((this.fitness + 4) <= 10 ) {
       this.fitness += 4;
     } else {
@@ -41,6 +44,9 @@ Pet.prototype.checkUp = function() {
   }
 
   Pet.prototype.feed = function() {
+    if (!this.isAlive) {
+      throw new Error('Your pet is no longer alive :(');
+    }
     if ((this.hunger - 3) >= 0 ) {
       this.hunger -= 3;
     } else this.hunger = 0;
